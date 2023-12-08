@@ -1,4 +1,4 @@
-const SortedSet = require('../lib/set');
+const SortedSet = require('../');
 
 const obj = {};
 const sym = Symbol();

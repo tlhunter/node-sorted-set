@@ -10,10 +10,9 @@
     "url": "https://github.com/tlhunter/node-sorted-set/issues"
   },
   "description": "A skip list implementation inspired by the Sorted Set in Redis.",
-  "dependencies": {},
   "devDependencies": {
     "chai": "~3.5.0",
-    "mocha": "~3.4.1"
+    "mocha": "^10.2.0"
   },
   "directories": {
     "example": "example",

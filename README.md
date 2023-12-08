@@ -1,4 +1,4 @@
-# @tlhunter/sorted-set
+# tlhunter-sorted-set
 
 A JavaScript implementation of Redis' [Sorted Sets](https://redis.io/commands#sorted_set). Keeps a collection of "members" in order based on their score. Uses skip lists under the hood, [like Redis does](http://stackoverflow.com/a/9626334/638546).
 
@@ -11,7 +11,7 @@ Image: The skip list data structure allows search, insert, and removal in O(log(
 ## Install
 
 ```sh
-$ npm install @tlhunter/sorted-set
+$ npm install tlhunter-sorted-set
 ```
 
 
@@ -33,7 +33,7 @@ The API mostly follows Redis' [Sorted Set Commands](https://redis.io/commands#so
 Members can be strings, symbols, objects, or really any primitive value.
 
 ```js
-const SortedSet = require('@tlhunter/sorted-set');
+const SortedSet = require('tlhunter-sorted-set');
 
 const z = new SortedSet();
 

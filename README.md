@@ -1,8 +1,8 @@
-# redis-sorted-set
+# @tlhunter/sorted-set
 
-A JavaScript implementation of Redis' [Sorted Sets](https://redis.io/commands#sorted_set). Keeps a set of keys in order based on their score. Uses skip lists under the hood, [like Redis does](http://stackoverflow.com/a/9626334/638546).
+A JavaScript implementation of Redis' [Sorted Sets](https://redis.io/commands#sorted_set). Keeps a collection of "members" in order based on their score. Uses skip lists under the hood, [like Redis does](http://stackoverflow.com/a/9626334/638546).
 
-This is a fork of the brilliant but abandoned [sorted-map](https://www.npmjs.com/package/sorted-map) package by [Eli Skeggs](https://github.com/skeggse).
+This is a fork of the brilliant but abandoned [redis-sorted-map](https://www.npmjs.com/package/redis-sorted-map) package by [Akseli Palén](https://github.com/axelpale) which was itself a fork of the brilliant but abandoned [sorted-map](https://www.npmjs.com/package/sorted-map) package by [Eli Skeggs](https://github.com/skeggse).
 
 ![A Skip List](/doc/skip-list.png?raw=true)
 
@@ -11,7 +11,7 @@ Image: The skip list data structure allows search, insert, and removal in O(log(
 ## Install
 
 ```sh
-$ npm install redis-sorted-set
+$ npm install @tlhunter/sorted-set
 ```
 
 
@@ -20,7 +20,6 @@ $ npm install redis-sorted-set
 Run any of the following:
 
 ```sh
-$ mocha
 $ npm test
 ```
 
@@ -29,15 +28,14 @@ _Note:_ remember to `npm install`!
 
 ## API
 
-The API follows Redis' [Sorted Set Commands](https://redis.io/commands#sorted_set) as precisely as possible, with a few additional methods such as `.has(member)`.
+The API mostly follows Redis' [Sorted Set Commands](https://redis.io/commands#sorted_set), with a few additional methods such as `.has(member)`.
 
-Note that keys can be strings, symbols, or objects.
+Members can be strings, symbols, objects, or really any primitive value.
 
 ```js
+const SortedSet = require('@tlhunter/sorted-set');
 
-var SortedSet = require('redis-sorted-set');
-
-var z = new SortedSet();
+const z = new SortedSet();
 
 // average O(log(N))
 z.add('Terminator', 8.0); // => null
@@ -104,7 +102,7 @@ z.length // => 4
 ## Intersection
 
 ```js
-var a = new SortedSet(), b = new SortedSet();
+const a = new SortedSet(), b = new SortedSet();
 
 a.add('5a600e10', 16);
 a.add('5a600e12', 10);
@@ -140,7 +138,7 @@ SortedSet.intersect(b, a);
 a.intersect(b);
 // => ['5a600e10', '5a600e14', '5a600e17', '5a600e19', '5a600e1c', '5a600e15', '5a600e1b']
 
-var c = new SortedSet();
+const c = new SortedSet();
 
 c.add('5a600e10', 7);
 c.add('5a600e12', 20);
@@ -164,7 +162,7 @@ SortedSet.intersect(c, a, b);
 You can enable unique values with the unique option, which causes `set` to throw an error if the value provided already belongs to a different key.
 
 ```js
-var z = new SortedSet({unique: true});
+const z = new SortedSet({unique: true});
 
 z.add('5a600e10', 16);
 z.add('5a600e11', 6);

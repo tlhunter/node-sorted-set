@@ -1,13 +1,16 @@
 {
+  "name": "@tlhunter/node-sorted-set",
+  "version": "0.1.0",
+  "main": "./lib/set.js",
   "author": {
-    "name": "Akseli Palén",
-    "email": "akseli.palen@gmail.com"
+    "name": "Thomas Hunter II",
+    "email": "tlhunter@datadog.com"
   },
   "bugs": {
-    "url": "https://github.com/axelpale/redis-sorted-set/issues"
+    "url": "https://github.com/tlhunter/node-sorted-set/issues"
   },
+  "description": "A skip list implementation inspired by the Sorted Set in Redis.",
   "dependencies": {},
-  "description": "A JavaScript implementation of Redis Sorted Sets.",
   "devDependencies": {
     "chai": "~3.5.0",
     "mocha": "~3.4.1"
@@ -17,26 +20,20 @@
     "lib": "lib",
     "test": "test"
   },
-  "homepage": "https://github.com/axelpale/redis-sorted-set",
+  "homepage": "https://github.com/tlhunter/node-sorted-set",
   "keywords": [
     "set",
     "linked-list",
     "skip-list",
-    "ordered",
-    "sorted",
-    "collection",
     "map",
     "redis"
   ],
   "license": "MIT",
-  "main": "./index",
-  "name": "redis-sorted-set",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/axelpale/redis-sorted-set.git"
+    "url": "git+https://github.com/tlhunter/node-sorted-set.git"
   },
   "scripts": {
     "test": "mocha"
-  },
-  "version": "2.0.0"
+  }
 }

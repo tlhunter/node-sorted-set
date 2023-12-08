@@ -1,11 +1,11 @@
-var SortedSet = require('../lib/set');
+const SortedSet = require('../lib/set');
 
-var obj = {};
-var sym = Symbol();
+const obj = {};
+const sym = Symbol();
 
 describe('skip map', function () {
   it('should support basic operations', function () {
-    var z = new SortedSet();
+    const z = new SortedSet();
 
     expect(z).to.have.length(0);
     expect(z.toArray()).to.eql([]);
@@ -87,7 +87,7 @@ describe('skip map', function () {
 
   describe('#add', function () {
     it('should implicitly delete', function () {
-      var z = new SortedSet();
+      const z = new SortedSet();
 
       z.add('5a600e10', 16);
       z.add('5a600e11', 6);
@@ -109,7 +109,7 @@ describe('skip map', function () {
 
   describe('#empty', function () {
     it('should remove all elements', function () {
-      var z = new SortedSet();
+      const z = new SortedSet();
 
       z.add('5a600e10', 16);
       z.add('5a600e11', 6);
@@ -131,7 +131,7 @@ describe('skip map', function () {
 
   describe('#incrBy(increment, key)', function () {
     it('should increase rank', function () {
-      var z = new SortedSet();
+      const z = new SortedSet();
 
       z.add('first', 1);
       z.add('second', 2);
@@ -143,7 +143,7 @@ describe('skip map', function () {
     });
 
     it('should create if not found', function () {
-      var z = new SortedSet();
+      const z = new SortedSet();
       z.add('first', 1);
       z.incrBy(2, 'second');
       expect(z.card()).to.equal(2);
@@ -154,7 +154,7 @@ describe('skip map', function () {
 
   describe('#keys', function () {
     it('should return the keys', function () {
-      var z = new SortedSet();
+      const z = new SortedSet();
 
       z.add('5a600e10', 16);
       z.add('5a600e11', 6);
@@ -173,7 +173,7 @@ describe('skip map', function () {
 
   describe('#rangeByScore', function () {
     it('should support special ranges', function () {
-      var z = new SortedSet();
+      const z = new SortedSet();
 
       z.add('5a600e10', 16);
       z.add('5a600e11', 6);
@@ -205,7 +205,7 @@ describe('skip map', function () {
 
   describe('#count', function () {
     it('should count elements', function () {
-      var z = new SortedSet();
+      const z = new SortedSet();
 
       expect(z.count()).to.equal(0);
 
@@ -240,13 +240,13 @@ describe('skip map', function () {
 
   describe('#range', function () {
     it('should support special ranges', function () {
-      var z = new SortedSet();
+      const z = new SortedSet();
       z.add('first', 1);
       z.add('second', 2);
       z.add('third', 3);
       z.add('fourth', 4);
 
-      var array = ['first', 'second', 'third', 'fourth'];
+      const array = ['first', 'second', 'third', 'fourth'];
 
       expect(z.range()).to.eql(array);
 
@@ -261,7 +261,7 @@ describe('skip map', function () {
     });
 
     it('should support withScores', function () {
-      var z = new SortedSet();
+      const z = new SortedSet();
       z.add('first', 1);
       z.add('second', 2);
 
@@ -272,7 +272,7 @@ describe('skip map', function () {
 
   describe('#intersect', function () {
     it('should intersect two sets', function () {
-      var a = new SortedSet(), b = new SortedSet();
+      const a = new SortedSet(), b = new SortedSet();
 
       a.add('5a600e10', 16);
       a.add('5a600e12', 10);
@@ -305,7 +305,7 @@ describe('skip map', function () {
     });
 
     it('should intersect three sets', function () {
-      var a = new SortedSet(), b = new SortedSet(), c = new SortedSet();
+      const a = new SortedSet(), b = new SortedSet(), c = new SortedSet();
 
       a.add('5a600e10', 16);
       a.add('5a600e12', 10);
@@ -349,10 +349,10 @@ describe('skip map', function () {
     });
 
     it('should intersect four sets', function () {
-      var a = new SortedSet();
-      var b = new SortedSet();
-      var c = new SortedSet();
-      var d = new SortedSet();
+      const a = new SortedSet();
+      const b = new SortedSet();
+      const c = new SortedSet();
+      const d = new SortedSet();
 
       a.add('5a600e10', 16);
       a.add('5a600e12', 10);
@@ -402,7 +402,7 @@ describe('skip map', function () {
 
   describe('#rank', function () {
     it('should get the correct rank', function () {
-      var z = new SortedSet();
+      const z = new SortedSet();
 
       z.add('5a600e10', 16);
       z.add('5a600e11', 6);
@@ -425,7 +425,7 @@ describe('skip map', function () {
 
   describe('#rem', function () {
     it('should delete special elements', function () {
-      var z = new SortedSet();
+      const z = new SortedSet();
 
       z.add('5a600e10', 16);
       z.add('5a600e11', 6);
@@ -457,7 +457,7 @@ describe('skip map', function () {
     });
 
     it('should delete many elements', function () {
-      var z = new SortedSet();
+      const z = new SortedSet();
 
       z.add('5a600e10', 16);
       z.add('5a600e11', 6);
@@ -487,7 +487,7 @@ describe('skip map', function () {
 
   describe('#remRangeByScore', function () {
     it('should strip out a range of elements', function () {
-      var z = new SortedSet();
+      const z = new SortedSet();
 
       z.add('5a600e10', 16);
       z.add('5a600e11', 6);
@@ -511,7 +511,7 @@ describe('skip map', function () {
     });
 
     it('should strip out all the elements', function () {
-      var z = new SortedSet();
+      const z = new SortedSet();
 
       z.add('5a600e10', 16);
       z.add('5a600e11', 6);
@@ -532,7 +532,7 @@ describe('skip map', function () {
 
   describe('#remRangeByRank', function () {
     it('should strip out a slice of elements', function () {
-      var z = new SortedSet();
+      const z = new SortedSet();
 
       z.add('5a600e10', 16);
       z.add('5a600e11', 6);
@@ -556,7 +556,7 @@ describe('skip map', function () {
     });
 
     it('should strip out all elements', function () {
-      var z = new SortedSet();
+      const z = new SortedSet();
 
       z.add('5a600e10', 16);
       z.add('5a600e11', 6);
@@ -577,7 +577,7 @@ describe('skip map', function () {
 
   describe('#values', function () {
     it('should return the values', function () {
-      var z = new SortedSet();
+      const z = new SortedSet();
 
       z.add('first', -1);
       z.add('third', 5);
@@ -589,7 +589,7 @@ describe('skip map', function () {
 
   describe('unique', function () {
     it('should ensure values are unique', function () {
-      var z = new SortedSet({unique: true});
+      const z = new SortedSet({unique: true});
 
       z.add('5a600e10', 16);
       z.add('5a600e11', 6);
@@ -635,7 +635,7 @@ describe('skip map', function () {
     });
 
     it('should revert keys if constraint broken during update', function () {
-      var z = new SortedSet({ unique: true });
+      const z = new SortedSet({ unique: true });
 
       z.add('5a600e10', 16);
       z.add('5a600e11', 6);

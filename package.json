@@ -11,7 +11,7 @@
   },
   "description": "A skip list implementation inspired by the Sorted Set in Redis.",
   "devDependencies": {
-    "chai": "~3.5.0",
+    "chai": "^4.3.10",
     "mocha": "^10.2.0"
   },
   "directories": {
